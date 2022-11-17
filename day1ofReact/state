@@ -1,0 +1,59 @@
+//state
+
+
+import logo from './logo.svg';
+import './App.css';
+import {useState} from'react';
+// function App() {
+//  const [greet, setGreet]=useState("Hell World");
+// console.log('rerender')
+//  const handleClick = ()=>{
+//   setGreet("hello from handle click");
+//   //change value won't be seen immediately if we use console so use setGreet also return else undefined//setgreet is asynchronous
+//   setGreet((previous) => {
+//     console.log('This is the value of greet',previous)
+//     return previous
+//   })
+//  }
+//   return (
+   
+//      <> 
+//     <h1>{greet}</h1>
+//     <button onClick={handleClick}>Click me</button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+//make a component that has initial state 0
+//a button when clicked increases the state by 1
+//a button when clicked decreases the state by 1
+//make a element that shows the state
+
+function App(){ //component
+  const [count, setCount]=useState(0);
+
+  const btnIncrease = ()=>{
+      setCount((previous) => {
+        return previous + 1        //display not in console
+      })}
+
+  const btnDecrease =() =>{
+    setCount((previous) => {
+      return previous - 1
+    })
+  }
+
+  return (
+   
+         <>   
+        <h1>{count}</h1>
+        <button onClick={btnIncrease}>Count++</button>
+        <button onClick={btnDecrease}>Count--</button>
+        </>
+      
+    )
+  
+}
+export default App;
